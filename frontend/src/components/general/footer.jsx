@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
               </span>
               {/* <img src="src/img-min/logo.png" alt="LOGO"> */}
             </div>
-            <p>Tailwind One Page Template for build One page landing page.</p>
+            <p>Elevate your game by connecting with the perfect practice partner anytime, anywhere.</p>
             <ul className="space-x-3 mt-6 mb-6 Lg:mb-0">
               {/*facebook*/}
               <li className="inline-block">
@@ -124,40 +125,34 @@ const Footer = () => {
             <div className="flex flex-wrap flex-row">
               <div className="flex-shrink max-w-full w-1/2 md:w-1/3 mb-6 lg:mb-0">
                 <h4 className="text-base leading-normal mb-3 uppercase text-yellow-500 underline">
-                  Support
+                  Links
                 </h4>
                 <ul>
                   <li className="py-1 hover:text-yellow-600">
-                    <a href="docs/index.html">Documentation</a>
+                    <Link href="/">Home</Link>
                   </li>
                   <li className="py-1 hover:text-yellow-600">
-                    <a href="docs/components.html">Components</a>
+                    <Link href="/about">About</Link>
                   </li>
                   <li className="py-1 hover:text-yellow-600">
-                    <a href="docs/credits.html">Credits</a>
+                    <Link href="/contact">Contact</Link>
                   </li>
-                  <li className="py-1 hover:text-yellow-600">
-                    <a href="docs/changelogs.html">Changelog</a>
-                  </li>
+                 
                 </ul>
               </div>
               <div className="flex-shrink max-w-full w-1/2 md:w-1/3 mb-6 lg:mb-0">
                 <h4 className="text-base leading-normal mb-3 uppercase text-yellow-500 underline">
-                  Includes
+                   Explore
                 </h4>
                 <ul>
                   <li className="py-1 hover:text-yellow-600">
-                    <a href="#">Tailwind Css</a>
+                    <Link href="/players">Players</Link>
                   </li>
                   <li className="py-1 hover:text-yellow-600">
-                    <a href="#">Javascript</a>
+                    <Link href="/events">Events</Link>
                   </li>
-                  <li className="py-1 hover:text-yellow-600">
-                    <a href="#">Vendors Js</a>
-                  </li>
-                  <li className="py-1 hover:text-yellow-600">
-                    <a href="#">Build System</a>
-                  </li>
+              
+                 
                 </ul>
               </div>
               <div className="flex-shrink max-w-full w-1/2 md:w-1/3 mb-6 lg:mb-0">
@@ -170,12 +165,6 @@ const Footer = () => {
                   </li>
                   <li className="py-1 hover:text-yellow-600">
                     <a href="#">Terms of Use</a>
-                  </li>
-                  <li className="py-1 hover:text-yellow-600">
-                    <a href="#">License</a>
-                  </li>
-                  <li className="py-1 hover:text-yellow-600">
-                    <a href="#">GDPR</a>
                   </li>
                 </ul>
               </div>
@@ -190,7 +179,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-12 col-md text-center">
             <p className="d-block my-3">
-            2024 Copyright © Your Company | All rights reserved.
+            2024 Copyright © PairPlay | All rights reserved.
             </p>
           </div>
         </div>

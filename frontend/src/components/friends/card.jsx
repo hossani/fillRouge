@@ -6,17 +6,19 @@ const CardFriend = ({friend, onDelete}) => {
   const router = useRouter();
 
   const handleNavigate = () => {
-    router.push(`/players/${friend.id}`); // Redirige vers la page du joueur
+    router.push(`/players/${friend.id}`); // Redirects to the player's page
   };
 
   const handleDelete = async () => {
-    try {
-      await api.delete(`/api/players/deleteRelation/${friend.id}`);
-      console.log("hamza")
-      onDelete(friend.id); // Met à jour la liste des amis après la suppression
-    } catch (error) {
-      console.error("Error deleting friend:", error);
-    }
+      const confirmation = window.confirm('Are you sure you want to remove the relationship?')
+ if(confirmation){
+  try {
+  await api.delete(`/api/players/deleteRelation/${friend.id}`);
+  onDelete(friend.id); // Updates the friends list after deletion
+} catch (error) {
+  console.error("Error deleting friend:", error);
+}
+ }
   };
 
   return (
@@ -31,7 +33,7 @@ const CardFriend = ({friend, onDelete}) => {
       </div>
       <button
         onClick={(e) => {
-          e.stopPropagation(); // Empêche la redirection lorsqu'on clique sur Delete
+          e.stopPropagation(); // Prevents redirection when clicking on Delete
           handleDelete();
         }}
         className="bg-red-400 hover:bg-red-500 text-black py-2 px-4 rounded"

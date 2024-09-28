@@ -22,7 +22,6 @@ const PageOfFriends = () => {
   useEffect(()=>{
     const fetchUserData = async () => {
       try {
-        // Récupère l'ID de l'utilisateur depuis localStorage
         const token = localStorage.getItem('token');
         if (token) {
           const res = await api.get(`/api/profile/`);
@@ -45,7 +44,7 @@ const PageOfFriends = () => {
       const fetchSport = async (sportId) => {
         try {
           const sportRes = await api.get(`/api/sports/${sportId}`);
-          setSport(sportRes.data.title); // Met à jour l'état avec les détails du sport
+          setSport(sportRes.data.title); 
         } catch (error) {
           console.error('Error fetching sport data:', error);
         }
@@ -55,7 +54,7 @@ const PageOfFriends = () => {
         try {
           
           const locationRes = await api.get(`/api/locations/${locationId}`);
-          setLocation(locationRes.data.city); // Met à jour l'état avec les détails de la location
+          setLocation(locationRes.data.city); 
         } catch (error) {
           console.error('Error fetching location data:', error);
         }
@@ -66,7 +65,7 @@ const PageOfFriends = () => {
   
   
   const updateProfile = (updatedData) => {
-    setUserData(updatedData); // Met à jour l'état local avec les nouvelles données
+    setUserData(updatedData); // Update
   };
 
   return (

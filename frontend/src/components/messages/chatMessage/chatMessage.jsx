@@ -16,7 +16,7 @@ const ChatMessage = ({ player,handleChat }) => {
   const chatboxRef = useRef(null);  // Pour le scrolling dans le chat
   // Fonction pour basculer l'état
   const toggleChat = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
 
   useEffect(() => {
@@ -63,7 +63,7 @@ useEffect(() => {
   if (chatboxRef.current) {
     chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
   }
-}, [messages]);
+}, [messages,isOpen]);
 
   useEffect(()=>{
     const updateSeenMessage = async () => {

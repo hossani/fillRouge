@@ -47,8 +47,8 @@ const ContactComp = () => {
       <div>
         <h1 className="text-4xl font-bold text-white">Contact Us</h1>
         <p className="text-sm text-gray-300 mt-4 leading-relaxed">
-          Have some big idea or brand to develop and need help? Then reach out
-          we'd love to hear about your project and provide help.
+        We would love to hear from you! Whether you have questions, feedback, or suggestions, 
+        feel free to reach out to us, and we'll get back to you as soon as possible.
         </p>
         <ul className="mt-12 space-y-8">
           <li className="flex items-center">
@@ -82,7 +82,7 @@ const ContactComp = () => {
               />
             </svg>
             <a href="javascript:void(0)" className="text-white text-sm ml-4">
-              +158 996 888
+              +2126 1563 6090
             </a>
           </li>
           <li className="flex items-center">
@@ -103,7 +103,7 @@ const ContactComp = () => {
               />
             </svg>
             <a href="javascript:void(0)" className="text-white text-sm ml-4">
-              123 Street 256 House
+              1 Street 10 No Casablanca
             </a>
           </li>
         </ul>

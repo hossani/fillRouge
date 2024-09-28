@@ -57,15 +57,15 @@ const Result = () => {
         <div className="w-full max-lg:max-w-2xl mx-auto lg:mx-0 lg:w-1/3 bg-white p-6 rounded-2xl shadow-md shadow-yellow-600">
           <div className="flex gap-5">
             <div className="font-manrope text-2xl font-bold text-yellow-600">
-              99.99%
+              90%
             </div>
             <div className="flex-1">
               <h4 className="text-xl text-gray-900 font-semibold mb-2">
                 Satisfaction
               </h4>
               <p className="text-xs text-gray-500 leading-5">
-                Company's remarkable growth journey as we continually innovate and
-                drive towards new heights of success.
+              The majority of our clients are highly satisfied with the comprehensive services offered 
+              by our application, which consistently meets their needs and expectations.
               </p>
             </div>
           </div>
@@ -73,15 +73,15 @@ const Result = () => {
         <div className="w-full max-lg:max-w-2xl mx-auto lg:mx-0 lg:w-1/3 bg-white p-6 rounded-2xl shadow-md shadow-yellow-600">
           <div className="flex gap-5">
             <div className="font-manrope text-2xl font-bold text-yellow-600">
-              10+
+              8+
             </div>
             <div className="flex-1">
               <h4 className="text-xl text-gray-900 font-semibold mb-2">
                 Many sports
               </h4>
               <p className="text-xs text-gray-500 leading-5">
-                Our very talented team members are the powerhouse of pagedone and
-                pillars of our success.{" "}
+              This app offers a wide variety of collective and individual sports that you can explore and practice,
+               allowing users to discover new activities and connect with others 
               </p>
             </div>
           </div>
@@ -89,15 +89,15 @@ const Result = () => {
         <div className="w-full max-lg:max-w-2xl mx-auto lg:mx-0 lg:w-1/3 bg-white p-6 rounded-2xl shadow-md shadow-yellow-600">
           <div className="flex gap-5">
             <div className="font-manrope text-2xl font-bold text-yellow-600">
-              10k+
+              1k+
             </div>
             <div className="flex-1">
               <h4 className="text-xl text-gray-900 font-semibold mb-2">
                 Users active
               </h4>
               <p className="text-xs text-gray-500 leading-5">
-                We have accomplished more than 625 projects worldwide and we are
-                still counting many more.
+              By joining our vibrant and dynamic community, you’ll interact with active users daily, 
+              making new connections and ensuring you never experience a moment of boredom.
               </p>
             </div>
           </div>

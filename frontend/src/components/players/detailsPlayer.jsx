@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const DetailsPlayer = ({bio,dateRegisterd,birthDate,fullName,sport,location}) => {
+
   return (
     <>
       <h2 className="text-xl font-bold mb-4">About Me</h2>

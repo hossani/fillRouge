@@ -51,7 +51,11 @@ const createAnnounce = async (req: AuthenticatedRequest, res: Response) => {
       include: {
         location: true,
         sport: true,
-        user: true,
+        user: {
+          include:{
+          sport:true,
+        }
+        },
       },
     }); 
     if(announces.length == 0) {throw new NotFoundError('Anouncements not found');}

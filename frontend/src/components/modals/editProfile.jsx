@@ -15,11 +15,9 @@ const EditProfile = ({onClose,userData,onUpdate}) => {
     setError('');
     setWaiting('');
     const { name, value } = e.target;
-    
       setUpdatedData({ ...updatedData, [name]: value });
     
   };
-
 
   useEffect(() => {
     // Fetch locations and sports dynamically
@@ -155,7 +153,7 @@ const EditProfile = ({onClose,userData,onUpdate}) => {
                   onChange={(e) => setImage(e.target.files[0])} 
                   name="image"
                   id="image"
-                  className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                  className="placeholder-gray-500 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                   type="file"
                />
               </div>
@@ -172,7 +170,7 @@ const EditProfile = ({onClose,userData,onUpdate}) => {
                 onChange={handleChange}
                   type="text"
                   id="fullName"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="placeholder-gray-500 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="hamza hossani"
                   required=""
                 />
@@ -232,7 +230,7 @@ const EditProfile = ({onClose,userData,onUpdate}) => {
                   id="birthDate"
                   value={updatedData.birthDate}
                   onChange={handleChange}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="placeholder-gray-500 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   required=""
                 />
               </div>
@@ -249,7 +247,7 @@ const EditProfile = ({onClose,userData,onUpdate}) => {
                   value={updatedData.bio}
                   onChange={handleChange}
                   rows={4}
-                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="placeholder-gray-500 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write about yourself here"
                   defaultValue={""}
                 />

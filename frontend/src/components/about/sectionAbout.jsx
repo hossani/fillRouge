@@ -15,11 +15,10 @@ const SectionAbout = () => {
           About Us
         </h2>
         <p className="mt-4 text-white text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis eros
-          at lacus feugiat hendrerit sed ut tortor. Suspendisse et magna quis
-          elit efficitur consequat. Mauris eleifend velit a pretium iaculis.
-          Donec sagittis velit et magna euismod, vel aliquet nulla malesuada.
-          Nunc pharetra massa lectus, a fermentum arcu volutpat vel.
+        We are a team of sports enthusiasts who firmly believe in the power of movement and the
+        importance of community. After noticing that many people want to engage in sports 
+        activities but struggle to find partners, we decided to create an app that facilitates
+        this connection.
         </p>
      
       </div>

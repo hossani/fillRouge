@@ -6,6 +6,9 @@ import api from '@/util/api';
 import ChatMessage from '../messages/chatMessage/chatMessage';
 import { initSocket } from '@/util/socket';
 import AuthContext from '@/contextAPI/authContext';
+import { redirect } from 'next/navigation';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProfilePlayer = ({ playerID }) => {
   const [profile, setProfile] = useState(null);
@@ -49,7 +52,7 @@ const ProfilePlayer = ({ playerID }) => {
         const response = await api.get(`/api/players/checkFriendStatus/${playerID}`);
         if (response.data.status === 'ACCEPTED') {
           setFriendStatus('friend');
-        } else if (response.data.requestSent === 'PENDING') {
+        } else if (response.data.status === 'PENDING') {
           setFriendStatus('sent');
         } else {
           setFriendStatus(false);
@@ -83,21 +86,29 @@ const ProfilePlayer = ({ playerID }) => {
         user2Id: profile.id,
       });
       if (response.data) {
-        alert('Demande d\'ami envoyée avec succès !');
+        toast.success('Friend request sent successfully.')
         sendFriendRequest(userId, String(profile.id), response.data.senderUser);
         setFriendStatus('sent');
       }
     } catch (error) {
       console.error('Erreur lors de l\'envoi de la demande d\'ami:', error);
-      alert('Erreur lors de l\'envoi de la demande d\'ami.');
+      if(error.response.data.status==429){
+        toast.error(`${error.response.data.problem}`)
+      }else{
+      toast.error('Error while sending the friend request.') 
     }
   };
-
+}
+  
   if (loading) return <LoadingBall />;
   if (error) return <Error error={error} />;
   if (!profile) return <Error error={error} />;
+  if(localStorage.getItem('userId')==playerID) return redirect('/players');
 
   return (
+    <>
+    <ToastContainer />
+
     <div className="bg-gray-100 min-h-[calc(100vh-66px)]">
       <div className="container mx-auto py-8">
         <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
@@ -152,6 +163,7 @@ const ProfilePlayer = ({ playerID }) => {
         />
       )}
     </div>
+    </>
   );
 };
 

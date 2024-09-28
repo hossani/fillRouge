@@ -34,7 +34,7 @@ model User {
   email           String      @unique
   password        String
   picture         String      @default("https://res.cloudinary.com/dhtqzlo9k/image/upload/v1726227825/lsqx613v1mwxhvtw3top.jpg")
-  bio             String      @default("")   
+  bio             String      @default("New user in community.")   
   dateRegistered  DateTime    @default(now())
   birthDate        DateTime     // Ajout de la date de naissance
   announces       Announce[]

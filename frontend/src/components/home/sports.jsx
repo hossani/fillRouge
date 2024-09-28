@@ -3,8 +3,8 @@ import React from 'react'
 const Sports = () => {
   return (
 <>
-  {/* Portfolio Content */}
-  <div id="portfolio" className="section relative z-0 pt-10 md:py-10 bg-white">
+  {/* sports Content */}
+  <div id="sports" className="section relative z-0 pt-10 md:py-10 bg-white">
     <div className="container xl:max-w-6xl mx-auto px-4">
       {/* Heading start */}
       <header className="text-center mx-auto mb-12 lg:px-20">

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Pagination = ({ playersPerPage, totalPlayers, paginate, currentPage }) => {
+const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
   const pageNumbers = [];
   
   // Calculer le nombre total de pages
-  const totalPages = Math.ceil(totalPlayers / playersPerPage);
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
   
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);

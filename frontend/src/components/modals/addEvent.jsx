@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import api from '@/util/api'; // Assurez-vous que ce chemin est correct pour l'instance Axios ou votre fichier de configuration API
+import api from '@/util/api'; 
 
 const AddEvent = ({ onClose }) => {
   const [locations, setLocations] = useState([]);
@@ -13,8 +13,8 @@ const AddEvent = ({ onClose }) => {
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-
   useEffect(() => {
+
     // Retrieve locations
     const fetchLocations = async () => {
       try {
@@ -34,7 +34,7 @@ const AddEvent = ({ onClose }) => {
         console.error('Error fetching sports:', error);
       }
     };
-
+    // csrf();
     fetchLocations();
     fetchSports();
   }, []);
@@ -42,10 +42,8 @@ const AddEvent = ({ onClose }) => {
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     setError('');
     setSuccess('');
-
     try {
       const response = await api.post('/api/announcements', {
         title,
@@ -61,7 +59,7 @@ const AddEvent = ({ onClose }) => {
          onClose();
       }
     } catch (error) {
-      setError(error.response?.data?.message || 'Something went wrong. Please try again.');
+      setError(error.response?.data?.message || error.response?.data?.problem || 'Something went wrong. Please try again.');
     }
   };
 
@@ -103,6 +101,7 @@ const AddEvent = ({ onClose }) => {
               </button>
             </div>
             <form className="mt-4 p-2 max-h-[75vh] overflow-y-auto" onSubmit={handleSubmit}>
+
               <div className="grid gap-4 mb-4 grid-cols-2">
                 <div className="col-span-2 sm:col-span-1">
                   <label
@@ -115,7 +114,7 @@ const AddEvent = ({ onClose }) => {
                     type="text"
                     name="title"
                     id="title"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="placeholder-gray-500 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Besoin d'un joueur attaquant pour match foot"
                     value={title}
                     onChange={(e) => { setError(''); setSuccess(''); setTitle(e.target.value);}}
@@ -133,7 +132,7 @@ const AddEvent = ({ onClose }) => {
                     type="date"
                     name="deadline"
                     id="deadline"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="placeholder-gray-500 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="20/12/2024"
                     value={deadline}
                     onChange={(e) => { setError(''); setSuccess(''); setDeadline(e.target.value)}}
@@ -187,7 +186,7 @@ const AddEvent = ({ onClose }) => {
                 <div className="col-span-2">
                   <label
                     htmlFor="description"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900  dark:text-white"
                   >
                     Description
                   </label>
@@ -195,7 +194,7 @@ const AddEvent = ({ onClose }) => {
                     id="description"
                     name="description"
                     rows={4}
-                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="placeholder-gray-500 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Write about the event here"
                     value={description}
                     onChange={(e) => { setError(''); setSuccess('');setDescription(e.target.value)}}

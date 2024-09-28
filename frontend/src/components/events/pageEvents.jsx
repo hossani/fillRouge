@@ -6,15 +6,20 @@ import AuthContext from "@/contextAPI/authContext";
 import api from "@/util/api";
 
 const Events = () => {
+  
   const { auth } = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [locations, setLocations] = useState([]);
   const [sports, setSports] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState("allCities");
-  const [selectedSport, setSelectedSport] = useState("allSports");
+  const [selectedSport, setSelectedSport] = useState('allSports');
   const [selectedDate, setSelectedDate] = useState("recent");
 
   useEffect(() => {
+    if(localStorage.getItem('locationId_events')) setSelectedLocation(localStorage.getItem('locationId_events'));
+    if(localStorage.getItem('sportId_events')) setSelectedSport(localStorage.getItem('sportId_events'))
+    if(localStorage.getItem('date_events')) setSelectedDate(localStorage.getItem('date_events'))
+
     // Fetch locations and sports dynamically
     const fetchLocations = async () => {
       try {

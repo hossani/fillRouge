@@ -7,10 +7,14 @@ const PagePlayers = () => {
   const [locations, setLocations] = useState([]);
   const [sports, setSports] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState("allCities");
-  const [selectedSport, setSelectedSport] = useState("allSports");
+  const [selectedSport, setSelectedSport] = useState('allSports');
   const [selectedDate, setSelectedDate] = useState("recent");
 
   useEffect(() => {
+    if(localStorage.getItem('locationId_players')) setSelectedLocation(localStorage.getItem('locationId_players'));
+    if(localStorage.getItem('sportId_players')) setSelectedSport(localStorage.getItem('sportId_players'))
+    if(localStorage.getItem('date_players')) setSelectedDate(localStorage.getItem('date_players'))
+
     // Fetch locations and sports dynamically
     const fetchLocations = async () => {
       try {

@@ -4,6 +4,8 @@ import routes from './routes/indexRoute'; // Adjust the path as needed
 import { Server } from 'socket.io';
 import http from 'http';
 import cors from 'cors';
+import helmet from 'helmet';
+import xss from 'xss-clean';
 
 dotenv.config();
 const app: Application = express();
@@ -83,19 +85,23 @@ socket.on('disconnect', () => {
       break;
     }
   }
-
   for (let key in onlineUsers.chat) {
     if (onlineUsers.chat[key] === socket.id) {
       delete onlineUsers.chat[key];
       break;
     }
   }
-
   console.log('Online users après déconnexion:', onlineUsers);
 });
 });
 
+
 app.use(express.json());
+// Use Helmet for security
+app.use(helmet());
+// Use xss-clean middleware to sanitize user input
+app.use(xss());
+
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routes);
 

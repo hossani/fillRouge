@@ -72,7 +72,7 @@ const joinUs=async()=>{
   if (!event) return <Error error={error}/>;
 
   return (
-<div className="bg-gray-100 min-h-[calc(100vh-66px)]">
+<div className="bg-gray-100 min-h-[calc(100vh-66px)] flex items-center">
   <div className="container mx-auto px-4 py-8">
     <div className="flex flex-wrap -mx-4">
       {/* Product Images */}
@@ -86,8 +86,8 @@ const joinUs=async()=>{
 
       </div>
       {/* Product Details */}
-      <div className="w-full md:w-1/2 px-4 bg-white rounded-lg">
-        <h2 className="text-2xl font-bold mb-2 mt-2">{event.title}</h2>
+      <div className="w-full md:w-1/2 px-4 bg-white rounded-lg" >
+        <h2 className="text-2xl font-bold mb-2 mt-6">{event.title}</h2>
         <p className="text-green-600 bg-green-300 w-fit px-2 font-bold rounded-md mb-4 text-sm"></p>
         <div className="mb-3">
           <span className="text-lg font-bold mr-2">Publish :</span>
@@ -108,8 +108,11 @@ const joinUs=async()=>{
         <p className="text-gray-700 mb-6">
         {event.description}
         </p>
-    
-        <div className="flex space-x-4 mb-3">
+        <div className="mb-6">
+          <span className="text-lg font-bold mr-2">Owner :</span>
+          <span className=" text-gray-700  ">{event.user.fullName}</span>
+        </div>
+        <div className="flex space-x-4">
           
           <button
           disabled={ownerID==localStorage.getItem('userId')?true:auth?false:true} 
@@ -117,7 +120,7 @@ const joinUs=async()=>{
           className="bg-yellow-300 flex gap-2 items-center text-black px-6 py-2 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
           {ownerID==localStorage.getItem('userId')?"Your event":"Join us"} 
           </button>
-  
+         
         </div>
                 {messageError && <p className="text-red-500 my-4">{messageError}</p>}
                 {messageSuccess && <p className="text-green-500 my-4">{messageSuccess}</p>}

@@ -3,6 +3,8 @@ import { useRouter } from 'next/navigation'
 import React, { useContext, useEffect, useState } from 'react'
 import api from '@/util/api'
 import AuthContext from '@/contextAPI/authContext'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const DetailsSettings = () => {
   const {logout}=useContext(AuthContext)
@@ -22,7 +24,7 @@ const DetailsSettings = () => {
     try {
       const response = await api.patch('/api/profile/changeEmail', { newEmail })
       if (response.data.message) {
-        alert("Email updated successfully!")
+        toast.success('Email updated successfully!')
         setEditEmail(false)
         setEmail(newEmail)
       }
@@ -38,7 +40,7 @@ const DetailsSettings = () => {
         newPassword,
       })
       if (response.data.message) {
-        alert("Password updated successfully!")
+        toast.success('Password updated successfully!')
         setCurrentPassword('')
         setNewPassword('');
         setErrorPassword('');
@@ -50,7 +52,6 @@ const DetailsSettings = () => {
   }
 
   const handleAccountDeletion = async () => {
-    console.log('hamza doz')
     const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer votre compte ?')
     if (confirmation) {
       try {
@@ -95,6 +96,8 @@ const DetailsSettings = () => {
   },[]);
 
   return (
+    <>
+    <ToastContainer/>
 <div className="mx-4 min-h-screen max-w-screen-xl sm:mx-8 xl:mx-auto">
   <div className=" py-3 sm:grid-cols-10">
     
@@ -236,6 +239,7 @@ const DetailsSettings = () => {
     </div>
   </div>
 </div>
+</>
 )
 }
 

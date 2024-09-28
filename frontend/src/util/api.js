@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { removeLocalStorage } from './localStorageRemove';
 
 const api = axios.create({
   baseURL: 'http://localhost:3002',
@@ -28,8 +29,7 @@ api.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      localStorage.removeItem('token'); // Supprimer le token expiré
-      localStorage.removeItem('userId'); 
+      removeLocalStorage();
 
       window.location.href = '/login';
         }

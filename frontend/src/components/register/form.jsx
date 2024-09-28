@@ -99,8 +99,7 @@ const FormRegister = () => {
               <div>
                 <h4 className="text-white text-lg font-semibold">Terms and Conditions Agreement</h4>
                 <p className="text-[13px] text-white mt-2">
-                  Require users to accept the terms and conditions of your service during registration.
-                </p>
+                By submitting your registration, you agree that your information will be stored in our database in accordance with our privacy policy                </p>
               </div>
             </div>
           </div>

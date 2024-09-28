@@ -13,8 +13,6 @@ const prisma = new PrismaClient();
   }
 };
 
-
-
  const getSportById = async (req: Request, res: Response) => {
   const { sportId } = req.params;  // Récupère l'ID du sport depuis les paramètres de la requête
   try {

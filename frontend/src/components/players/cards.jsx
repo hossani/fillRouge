@@ -5,9 +5,9 @@ import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react'
 import { initSocket } from '@/util/socket';
 import ChatMessage from '../messages/chatMessage/chatMessage';
+import { toast } from 'react-toastify';
 
-
-const Card = ({player, isChatOpen, handleChat}) => {
+const Card = ({player, isChatOpen, handleChat,toastError,toastSuccess}) => {
 
 const {userId}=useContext(AuthContext)
   const router = useRouter();
@@ -58,21 +58,26 @@ const {userId}=useContext(AuthContext)
         user2Id: player.id,
       });
       if(response.data){
-        alert('Demande d\'ami envoyée avec succès !');
+        toastSuccess();
         sendFriendRequest(userId,String(player.id),response.data.senderUser);
         setFriendStatus('sent');
       }
       
     } catch (error) {
       console.error('Erreur lors de l\'envoi de la demande d\'ami:', error);
-      alert('Erreur lors de l\'envoi de la demande d\'ami.');
-    }
+      if(error.response.data.status==429){
+        toast.error(`${error.response.data.problem}`)
+      }else{
+        toastError();
+      }
+        }
   };
 
 
 
   return (
     <>
+
     <div  onClick={handleSeeMore}
       className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cursor-pointer ">
 
@@ -112,10 +117,9 @@ const {userId}=useContext(AuthContext)
       </button>
     </div>
   </div>
+  
 </div>
-
       {isChatOpen && <ChatMessage player={player} handleChat={handleChat} />}
-
 </>
   )
 }

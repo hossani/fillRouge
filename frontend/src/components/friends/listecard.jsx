@@ -22,7 +22,7 @@ const FriendsComp = () => {
   }, []);
 
   const handleDelete = (friendId) => {
-    setFriends(friends.filter((friend) => friend.id !== friendId)); // Met à jour la liste des amis
+    setFriends(friends.filter((friend) => friend.id !== friendId)); // Update
   };
 
   return (

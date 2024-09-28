@@ -62,9 +62,8 @@ const Testimonial = () => {
       />
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-800 leading-relaxed">
-          The service was amazing. I never had to wait that long for my food.
-          The staff was friendly and attentive, and the delivery was
-          impressively prompt at the all time.
+        The app is absolutely fantastic. I was amazed at how quickly I found sports partners in my local area. The community is very supportive and friendly, and I genuinely
+         enjoy meeting new people every single time I log in
         </p>
       </div>
       <div className="flex justify-center space-x-1 mt-6">
@@ -120,9 +119,9 @@ const Testimonial = () => {
       />
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-800 leading-relaxed">
-          The service was amazing. I never had to wait that long for my food.
-          The staff was friendly and attentive, and the delivery was
-          impressively prompt at the all time.
+        The experience is exceptional. I never thought it would be so easy to join local sports events.
+         The features are intuitive and well-designed,
+         and I appreciate how organized everything is for users like me.
         </p>
       </div>
       <div className="flex justify-center space-x-1 mt-6">
@@ -178,9 +177,7 @@ const Testimonial = () => {
       />
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-800 leading-relaxed">
-          The service was amazing. I never had to wait that long for my food.
-          The staff was friendly and attentive, and the delivery was
-          impressively prompt at the all time.
+          The platform is impressive. I didn't expect to discover so many different sports activities available nearby. The notifications are timely and helpful, and I love being part of such an active community every day.
         </p>
       </div>
       <div className="flex justify-center space-x-1 mt-6">

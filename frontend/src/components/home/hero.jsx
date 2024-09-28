@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           <a
             className="py-2.5 px-10 inline-block text-center leading-normal text-gray-900 bg-white border-b border-gray-100 hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4"
-            href="#portfolio"
+            href="#sports"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ const Hero = () => {
                 }}
               />
             </svg>
-            Guide Me
+             Click Me
           </a>
         
         </div>

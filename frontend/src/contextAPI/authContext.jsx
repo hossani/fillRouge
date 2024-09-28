@@ -1,6 +1,7 @@
 'use client'
 import React, { createContext, useState, useLayoutEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { removeLocalStorage } from '@/util/localStorageRemove';
 
 
 const AuthContext = createContext();
@@ -50,8 +51,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
+    removeLocalStorage();
+    
     setUserId('');
     setAuth(false);
     setUserData({

@@ -27,7 +27,7 @@ const Card = ({event}) => {
       />
       <div className="ml-4 flex-1">
         <p className="text-sm text-gray-800 font-semibold">{event.user.fullName}</p>
-        <p className="text-xs text-gray-500 mt-0.5">Player of : {event.sport.title}</p>
+        <p className="text-xs text-gray-500 mt-0.5">Player of : {event.user.sport.title}</p>
       </div>
     </div>
     <button
